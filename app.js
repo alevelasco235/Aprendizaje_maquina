@@ -2,7 +2,7 @@ import mongoose from "mongoose";//Libreria para conexion de base de datos
 import express from "express";//libreria para crear servidores
 import cors from "cors";//libreria para darle seguridad al servidor 
 import dotenv from "dotenv";//Libreria para configurar el documento .env
-
+import {test} from "./backend/controllers/alumnos.controllers.js"
 
 dotenv.config();
 mongoose.connect(process.env.url_bd)
@@ -12,6 +12,8 @@ mongoose.connect(process.env.url_bd)
 
 
 //servidor
-const app = express;
+const app = express();
 app.use(cors());
+
 app.listen(() =>console.log("Esta jalando el servidor, no escucha borroso"))
+test();
